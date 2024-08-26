@@ -1,0 +1,27 @@
+# Nombres de archivos
+TARGET = main.dynamic.exe
+LIBRARY = libucsp.so
+OBJECTS = ucsp.o main.o
+
+# Reglas de compilación
+all: $(TARGET)
+
+# Compilar main.o y ucsp.o
+main.o: main.c ucsp.h
+	gcc -c main.c -o main.o
+
+ucsp.o: ucsp.c ucsp.h
+	gcc -fPIC -c ucsp.c -o ucsp.o
+
+# Crear la biblioteca dinámica
+$(LIBRARY): ucsp.o
+	gcc -shared -o $(LIBRARY) ucsp.o
+
+# Enlazar y crear el ejecutable
+$(TARGET): $(OBJECTS) $(LIBRARY)
+	gcc -o $(TARGET) main.o -L. -lucsp -Wl,-rpath=.
+
+# Limpiar los archivos compilados
+clean:
+	rm -f $(OBJECTS) $(TARGET) $(LIBRARY)
+
