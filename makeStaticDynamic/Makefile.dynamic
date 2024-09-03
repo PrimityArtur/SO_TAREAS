@@ -6,10 +6,6 @@ OBJECTS = ucsp.o main.o
 # Reglas de compilación
 all: $(TARGET)
 
-# Compilar main.o y ucsp.o
-main.o: main.c ucsp.h
-	gcc -c main.c -o main.o
-
 ucsp.o: ucsp.c ucsp.h
 	gcc -fPIC -c ucsp.c -o ucsp.o
 
@@ -18,8 +14,11 @@ $(LIBRARY): ucsp.o
 	gcc -shared -o $(LIBRARY) ucsp.o
 
 # Enlazar y crear el ejecutable
+# -Wl,-rpath=. evita el uso de las variables de entorno
+# -Wl los argumentos deben ser separados al enlazador
+# -rpath establece una ruta en el tiempode ejecucion
 $(TARGET): $(OBJECTS) $(LIBRARY)
-	gcc -o $(TARGET) main.o -L. -lucsp -Wl,-rpath=.
+	gcc -o $(TARGET) main.c -L. -lucsp -Wl,-rpath=.
 
 # Limpiar los archivos compilados
 clean:

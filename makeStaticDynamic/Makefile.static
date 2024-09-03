@@ -1,21 +1,17 @@
 # Nombres de archivos
 TARGET = main.static.exe
 LIBRARY = libucsp.a
-OBJECTS = ucsp.o main.o
+OBJECTS = main.o libucsp.o
 
 # Reglas de compilación
 all: $(TARGET)
 
-# Compilar main.o y ucsp.o
-main.o: main.c ucsp.h
-	gcc -c main.c -o main.o
-
-ucsp.o: ucsp.c ucsp.h
-	gcc -c ucsp.c -o ucsp.o
+libucsp.o: ucsp.c ucsp.h
+	gcc -c ucsp.c -o libucsp.o
 
 # Crear la biblioteca estática
-$(LIBRARY): ucsp.o
-	ar rcs $(LIBRARY) ucsp.o
+$(LIBRARY): libucsp.o
+	ar rcs $(LIBRARY) libucsp.o
 
 # Enlazar y crear el ejecutable
 $(TARGET): $(OBJECTS) $(LIBRARY)
