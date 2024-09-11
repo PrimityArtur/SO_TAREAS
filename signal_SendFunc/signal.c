@@ -51,7 +51,7 @@ void killC(pid_t pid, int signum){
             printf("SIGSTOP enviado al proceso %d\n", pid);
             break;
         default:
-            if (kill(pid, signum) == -1) { //stop
+            if (kill(pid, signum) == -1) { 
                 printf("Error al enviar señal %d, al proceso %d\n",signum, pid);
                 exit(1);
             }

@@ -15,7 +15,7 @@ int main() {
 
     printf("PID %d Ejecutando...\n", getpid());
     while(1){
-      pause();
+      sleep(99999);
     }
 
     return 0;
