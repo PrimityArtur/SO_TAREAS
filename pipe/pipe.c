@@ -44,6 +44,7 @@ int main(void) {
         close(fd2[0]);
         fclose(inputFile);
         exit(0);
+        
     } else { // Proceso padre
         close(fd1[1]); // Cerrar el lado de escritura 
         close(fd2[0]); // Cerrar el lado de lectura 

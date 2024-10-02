@@ -8,6 +8,6 @@ all: $(TARGETS)
 	$(CC) $(CFLAGS) $@.exe $@.c
 
 clean:
-	rm -f $(TARGETS) *.exe
+	rm -f $(TARGETS) *.exe count.txt write.txt
 
 
