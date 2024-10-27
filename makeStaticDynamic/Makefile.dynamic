@@ -1,8 +1,6 @@
 TARGET = main.dynamic.exe
 LIBRARY = libucsp.so
 OBJECTS = ucsp.o main.o
-# nm -D libucsp.so
-# ldd libucsp.so
 all: $(TARGET)
 
 ucsp.o: ucsp.c ucsp.h
