@@ -1,0 +1,1 @@
+savedcmd_/home/userlinux/Documents/UCSP/SO_TAREAS/modulo_kernel/hello-1.mod := printf '%s\n'   hello-1.o | awk '!x[$$0]++ { print("/home/userlinux/Documents/UCSP/SO_TAREAS/modulo_kernel/"$$0) }' > /home/userlinux/Documents/UCSP/SO_TAREAS/modulo_kernel/hello-1.mod

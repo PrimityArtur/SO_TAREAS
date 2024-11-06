@@ -1,0 +1,1 @@
+savedcmd_/home/userlinux/Documents/UCSP/SO_TAREAS/modulo_kernel/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/userlinux/Documents/UCSP/SO_TAREAS/modulo_kernel/Module.symvers -T /home/userlinux/Documents/UCSP/SO_TAREAS/modulo_kernel/modules.order -i Module.symvers -e 
