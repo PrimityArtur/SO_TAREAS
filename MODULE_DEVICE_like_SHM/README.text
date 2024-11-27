@@ -1,0 +1,35 @@
+Descripcion:
+  - Este proyecto implementa un dispositivo en Linux que permite:
+    - Escribir mensajes al dispositivo.
+    - Leer mensajes almacenados desde el dispositivo.
+  - Integra múltiples procesos sincronizados mediante semáforos o mutexes.
+
+Archivos:
+  - chardev.c: módulo de dispositivo de caracteres.
+  - Makefile: para compilar y limpiar los archivos y el modulo.
+  - pInit.c: Inicializa el dispositivo con un mensaje.
+  - read.c: Lee y muestra continuamente el contenido del dispositivo.
+  - p.c: Proceso concurrente que lee, escribe y sincroniza con el dispositivo.
+
+Pasos de Ejecucion:
+  - Compilación del modulo
+    - make
+  - Carga del módulo:
+    - sudo insmod chardev.ko 
+  - Creación del archivo de dispositivo:
+    - sudo mknod /dev/UCSP c <major> 0 (para ver el major: sudo dmesg)
+    - sudo chmod 666 /dev/UCSP
+  - Ejecución de programas:
+    - Inicializar el dispositivo: ./pInit.exe
+    - Leer contenido: ./read.exe
+    - Ejecutar procesos:
+      - ./p.exe 3 "name1" 
+      - ./p.exe 4 "name2" 
+      - ./p.exe 5 "name3" 
+
+
+Limpieza:
+  - Eliminar el archivo del dispositivo: sudo rm /dev/UCSP
+  - Descargar el módulo: sudo rmmod chardev
+  - Limpiar archivos generados: make clean
+

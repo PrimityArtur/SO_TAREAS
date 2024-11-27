@@ -1,0 +1,1 @@
+savedcmd_/home/userlinux/Documents/UCSP/SO_TAREAS/MODULE_DEVICE_like_SHM/modules.order := {   echo /home/userlinux/Documents/UCSP/SO_TAREAS/MODULE_DEVICE_like_SHM/chardev.o; :; } > /home/userlinux/Documents/UCSP/SO_TAREAS/MODULE_DEVICE_like_SHM/modules.order

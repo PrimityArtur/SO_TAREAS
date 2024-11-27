@@ -1,0 +1,1 @@
+savedcmd_/home/userlinux/Documents/UCSP/SO_TAREAS/MODULE_DEVICE_like_SHM/chardev.mod := printf '%s\n'   chardev.o | awk '!x[$$0]++ { print("/home/userlinux/Documents/UCSP/SO_TAREAS/MODULE_DEVICE_like_SHM/"$$0) }' > /home/userlinux/Documents/UCSP/SO_TAREAS/MODULE_DEVICE_like_SHM/chardev.mod
